@@ -28,7 +28,6 @@
 #include "boost/function.hpp"
 
 #include "mars/comm/messagequeue/message_queue.h"
-#include "mars/comm/messagequeue/message_queue_utils.h"
 #include "mars/stn/stn.h"
 
 struct ZombieTask;
@@ -61,7 +60,7 @@ class ZombieTaskManager {
     void __TimerChecker();
 
   private:
-    MessageQueue::ScopeRegister m_asyncreg;
+    MessageQueue::ScopeRegister asyncreg_;
     std::list<ZombieTask> lsttask_;
     uint64_t net_core_last_start_task_time_;
 };
